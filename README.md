@@ -1,1 +1,1 @@
-# dozenal-time
+# Dozenal time intuition

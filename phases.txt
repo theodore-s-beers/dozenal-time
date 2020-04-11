@@ -1,0 +1,12 @@
+0: Midnight
+2: Witching
+4: Predawn
+6: Early morning
+8: Midmorning
+10: Late morning
+12: Noon
+14: Midafternoon
+16: Late afternoon
+18: Evening
+20: Twilight
+22: Night

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <style>
+      :root {
+        --day-bar-fill: 0;
+        --two-hour-bar-fill: 0;
+        --ten-minute-bar-fill: 0;
+        --fifty-second-bar-fill: 0;
+      }
+
+      .progress {
+        height: 2rem;
+      }
+
+      #dayBar {
+        width: var(--day-bar-fill);
+      }
+
+      #twoHourBar {
+        width: var(--two-hour-bar-fill);
+      }
+
+      #tenMinuteBar {
+        width: var(--ten-minute-bar-fill);
+      }
+
+      #fiftySecondBar {
+        width: var(--fifty-second-bar-fill);
+      }
+    </style>
+
+    <title>Dozenal time intuition</title>
+  </head>
+  <body>
+    <div class="container" style="max-width: 600px; margin-top: 0.6rem;">
+      <h1>Dozenal time intuition</h1>
+
+      <p>
+        The current dozenal time is <code><span id="dozenalTime"></span></code>.
+        For a general introduction to the topic, see
+        <a href="https://dozenal.ae-web.ca/" target="_blank" rel="noopener"
+          >Paul Rapoport’s website</a
+        >.
+      </p>
+
+      <div style="display: flex; justify-content: space-between;">
+        <span>Midnight</span><span>Noon</span><span>Midnight</span>
+      </div>
+
+      <div class="progress">
+        <div
+          id="dayBar"
+          class="progress-bar"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+
+      <div
+        style="display: flex; justify-content: space-between; margin-top: 1rem;"
+      >
+        <span id="phaseStart"></span><span id="phaseEnd"></span>
+      </div>
+
+      <div class="progress">
+        <div
+          id="twoHourBar"
+          class="progress-bar bg-success"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <span>Coffee interval (12/ phase of day)</span>
+      </div>
+
+      <div class="progress">
+        <div
+          id="tenMinuteBar"
+          class="progress-bar bg-info"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+
+      <div style="margin-top: 1rem;">
+        <span>Dozenal minute (12/ coffee interval)</span>
+      </div>
+
+      <div class="progress">
+        <div
+          id="fiftySecondBar"
+          class="progress-bar bg-warning"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dozenal.js"></script>
+    <script>
+      // Run function on page load
+      dozenal();
+
+      // Rerun function at intervals
+      setInterval(dozenal, 347);
+    </script>
+  </body>
+</html>

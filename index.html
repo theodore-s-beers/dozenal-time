@@ -53,12 +53,20 @@
       <h1>Dozenal time intuition</h1>
 
       <p>
-        The current dozenal time is <code><span id="dozenalTime"></span></code>.
+        The current dozenal time is
+        <code style="font-size: large;"><span id="dozenalTime"></span></code>.
+      </p>
+
+      <p style="margin-top: -0.3rem;">
         For a general introduction to the topic, see
         <a href="https://dozenal.ae-web.ca/" target="_blank" rel="noopener"
           >Paul Rapoport’s website</a
-        >.
+        >. In this visualization, the different units are rendered as progress
+        bars. We can, perhaps, develop a better sense of the correspondence
+        between dozenal time values and points in the day.
       </p>
+
+      <hr />
 
       <div style="display: flex; justify-content: space-between;">
         <span>Midnight</span><span>Noon</span><span>Midnight</span>
@@ -91,7 +99,7 @@
       </div>
 
       <div style="margin-top: 1rem;">
-        <span>Coffee interval (12/ phase of day)</span>
+        <span>Coffee break (12/ phase of day)</span>
       </div>
 
       <div class="progress">
@@ -105,10 +113,10 @@
       </div>
 
       <div style="margin-top: 1rem;">
-        <span>Dozenal minute (12/ coffee interval)</span>
+        <span>Dozenal minute (12/ coffee break)</span>
       </div>
 
-      <div class="progress">
+      <div class="progress" style="margin-bottom: 1.4rem;">
         <div
           id="fiftySecondBar"
           class="progress-bar bg-warning"
@@ -117,6 +125,14 @@
           aria-valuemax="100"
         ></div>
       </div>
+
+      <hr />
+
+      <p style="margin-top: -0.3rem;">
+        Made under lockdown by
+        <a href="https://www.theobeers.com/" rel="noopener">Theo Beers</a
+        ><br /><em>Last updated 11 Apr. 2020</em>
+      </p>
     </div>
 
     <script src="js/jquery-3.4.1.slim.min.js"></script>

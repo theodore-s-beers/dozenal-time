@@ -47,7 +47,7 @@ function dozenal() {
   var secondsCounterNormalized = "";
   var tinyCounterNormalized = "";
 
-  // Determine base-12 values
+  // Set base-12 values
   if (twoHourCounter === 11) {
     twoHourCounterNormalized = "Ε";
   } else if (twoHourCounter === 10) {
@@ -97,11 +97,8 @@ function dozenal() {
     secondsCounterNormalized +
     tinyCounterNormalized;
 
-  // Define variable for dozenal time label
-  var dozenalTimeLabel = document.getElementById("dozenalTime");
-
   // Set dozenal time label
-  dozenalTimeLabel.innerHTML = dozenalTime;
+  document.getElementById("dozenalTime").innerHTML = dozenalTime;
 
   // Initialize variables for phase start and end values
   var phaseStart = "";
@@ -146,11 +143,7 @@ function dozenal() {
     phaseEnd = "Witching";
   }
 
-  // Define variables for phase start and end labels
-  var phaseStartLabel = document.getElementById("phaseStart");
-  var phaseEndLabel = document.getElementById("phaseEnd");
-
   // Set phase start and end labels
-  phaseStartLabel.innerHTML = phaseStart;
-  phaseEndLabel.innerHTML = phaseEnd;
+  document.getElementById("phaseStart").innerHTML = phaseStart;
+  document.getElementById("phaseEnd").innerHTML = phaseEnd;
 }

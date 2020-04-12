@@ -27,7 +27,7 @@ function dozenal() {
 
   // Set base-12 values
   if (twoHourCounter === 11) {
-    twoHourCounterNormalized = "Ε";
+    twoHourCounterNormalized = "Ɛ";
   } else if (twoHourCounter === 10) {
     twoHourCounterNormalized = "Χ";
   } else {
@@ -35,7 +35,7 @@ function dozenal() {
   }
 
   if (tenMinuteCounter === 11) {
-    tenMinuteCounterNormalized = "Ε";
+    tenMinuteCounterNormalized = "Ɛ";
   } else if (tenMinuteCounter === 10) {
     tenMinuteCounterNormalized = "Χ";
   } else {
@@ -43,7 +43,7 @@ function dozenal() {
   }
 
   if (fiftySecondCounter === 11) {
-    fiftySecondCounterNormalized = "Ε";
+    fiftySecondCounterNormalized = "Ɛ";
   } else if (fiftySecondCounter === 10) {
     fiftySecondCounterNormalized = "Χ";
   } else {
@@ -51,7 +51,7 @@ function dozenal() {
   }
 
   if (secondsCounter === 11) {
-    secondsCounterNormalized = "Ε";
+    secondsCounterNormalized = "Ɛ";
   } else if (secondsCounter === 10) {
     secondsCounterNormalized = "Χ";
   } else {
@@ -59,7 +59,7 @@ function dozenal() {
   }
 
   if (tinyCounter === 11) {
-    tinyCounterNormalized = "Ε";
+    tinyCounterNormalized = "Ɛ";
   } else if (tinyCounter === 10) {
     tinyCounterNormalized = "Χ";
   } else {

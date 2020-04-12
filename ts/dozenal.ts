@@ -11,30 +11,6 @@ function dozenal() {
     currentDate.getSeconds() +
     currentDate.getMilliseconds() / 1000;
 
-  // Calculate percentages for progress bars
-  const percentOfDay = (timeInSeconds / 86400) * 100;
-  const percentOfTwoHours = ((timeInSeconds % 7200) / 7200) * 100;
-  const percentOfTenMinutes = ((timeInSeconds % 600) / 600) * 100;
-  const percentOfFiftySeconds = ((timeInSeconds % 50) / 50) * 100;
-
-  // Set CSS variables with calculated percentages
-  document.documentElement.style.setProperty(
-    "--day-bar-fill",
-    percentOfDay + "%"
-  );
-  document.documentElement.style.setProperty(
-    "--two-hour-bar-fill",
-    percentOfTwoHours + "%"
-  );
-  document.documentElement.style.setProperty(
-    "--ten-minute-bar-fill",
-    percentOfTenMinutes + "%"
-  );
-  document.documentElement.style.setProperty(
-    "--fifty-second-bar-fill",
-    percentOfFiftySeconds + "%"
-  );
-
   // Calculate dozenal time values
   const twoHourCounter = Math.floor(timeInSeconds / 7200);
   const tenMinuteCounter = Math.floor((timeInSeconds % 7200) / 600);
@@ -101,6 +77,40 @@ function dozenal() {
 
   // Set dozenal time label
   document.getElementById("dozenalTime").innerHTML = dozenalTime;
+
+  // Calculate percentages for progress bars
+  const percentOfDay = (timeInSeconds / 86400) * 100;
+  const percentOfTwoHours = ((timeInSeconds % 7200) / 7200) * 100;
+  const percentOfTenMinutes = ((timeInSeconds % 600) / 600) * 100;
+  const percentOfFiftySeconds = ((timeInSeconds % 50) / 50) * 100;
+
+  // Set CSS variables with calculated percentages
+  document.documentElement.style.setProperty(
+    "--day-bar-fill",
+    percentOfDay + "%"
+  );
+  document.documentElement.style.setProperty(
+    "--two-hour-bar-fill",
+    percentOfTwoHours + "%"
+  );
+  document.documentElement.style.setProperty(
+    "--ten-minute-bar-fill",
+    percentOfTenMinutes + "%"
+  );
+  document.documentElement.style.setProperty(
+    "--fifty-second-bar-fill",
+    percentOfFiftySeconds + "%"
+  );
+
+  // Add labels to progress bars
+  document.getElementById("dayBar").innerHTML = twoHourCounterNormalized;
+  document.getElementById("twoHourBar").innerHTML = tenMinuteCounterNormalized;
+  document.getElementById(
+    "tenMinuteBar"
+  ).innerHTML = fiftySecondCounterNormalized;
+  document.getElementById(
+    "fiftySecondBar"
+  ).innerHTML = secondsCounterNormalized;
 
   // Initialize variables for phase start and end values
   let phaseStart = "";

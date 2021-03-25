@@ -1,161 +1,151 @@
-"use strict";
-
-function dozenal() {
+// Global DOM variables
+const dozenalTimeSpan = document.getElementById('dozenalTime')
+const dayBarDiv = document.getElementById('dayBar')
+const twoHourBarDiv = document.getElementById('twoHourBar')
+const tenMinuteBarDiv = document.getElementById('tenMinuteBar')
+const fiftySecondBarDiv = document.getElementById('fiftySecondBar')
+const phaseStartSpan = document.getElementById('phaseStart')
+const phaseEndSpan = document.getElementById('phaseEnd')
+function dozenal () {
   // Get current date and time
-  const currentDate = new Date();
-
+  const currentDate = new Date()
   // Express time as number of seconds elapsed so far today
   const timeInSeconds =
     currentDate.getHours() * 3600 +
     currentDate.getMinutes() * 60 +
     currentDate.getSeconds() +
-    currentDate.getMilliseconds() / 1000;
-
+    currentDate.getMilliseconds() / 1000
   // Calculate dozenal time values
-  const twoHourCounter = Math.floor(timeInSeconds / 7200);
-  const tenMinuteCounter = Math.floor((timeInSeconds % 7200) / 600);
-  const fiftySecondCounter = Math.floor((timeInSeconds % 600) / 50);
-  const secondsCounter = Math.floor((timeInSeconds % 50) / (50 / 12));
-  const tinyCounter = Math.floor((timeInSeconds % (50 / 12)) / (50 / 12 / 12));
-
+  const twoHourCounter = Math.floor(timeInSeconds / 7200)
+  const tenMinuteCounter = Math.floor((timeInSeconds % 7200) / 600)
+  const fiftySecondCounter = Math.floor((timeInSeconds % 600) / 50)
+  const secondsCounter = Math.floor((timeInSeconds % 50) / (50 / 12))
+  const tinyCounter = Math.floor((timeInSeconds % (50 / 12)) / (50 / 12 / 12))
   // Initialize variables for base-12 values
-  let twoHourCounterNormalized = "";
-  let tenMinuteCounterNormalized = "";
-  let fiftySecondCounterNormalized = "";
-  let secondsCounterNormalized = "";
-  let tinyCounterNormalized = "";
-
+  let twoHourCounterNormalized = ''
+  let tenMinuteCounterNormalized = ''
+  let fiftySecondCounterNormalized = ''
+  let secondsCounterNormalized = ''
+  let tinyCounterNormalized = ''
   // Set base-12 values
   if (twoHourCounter === 11) {
-    twoHourCounterNormalized = "Ɛ";
+    twoHourCounterNormalized = 'Ɛ'
   } else if (twoHourCounter === 10) {
-    twoHourCounterNormalized = "Χ";
+    twoHourCounterNormalized = 'Χ'
   } else {
-    twoHourCounterNormalized = twoHourCounter.toString();
+    twoHourCounterNormalized = twoHourCounter.toString()
   }
-
   if (tenMinuteCounter === 11) {
-    tenMinuteCounterNormalized = "Ɛ";
+    tenMinuteCounterNormalized = 'Ɛ'
   } else if (tenMinuteCounter === 10) {
-    tenMinuteCounterNormalized = "Χ";
+    tenMinuteCounterNormalized = 'Χ'
   } else {
-    tenMinuteCounterNormalized = tenMinuteCounter.toString();
+    tenMinuteCounterNormalized = tenMinuteCounter.toString()
   }
-
   if (fiftySecondCounter === 11) {
-    fiftySecondCounterNormalized = "Ɛ";
+    fiftySecondCounterNormalized = 'Ɛ'
   } else if (fiftySecondCounter === 10) {
-    fiftySecondCounterNormalized = "Χ";
+    fiftySecondCounterNormalized = 'Χ'
   } else {
-    fiftySecondCounterNormalized = fiftySecondCounter.toString();
+    fiftySecondCounterNormalized = fiftySecondCounter.toString()
   }
-
   if (secondsCounter === 11) {
-    secondsCounterNormalized = "Ɛ";
+    secondsCounterNormalized = 'Ɛ'
   } else if (secondsCounter === 10) {
-    secondsCounterNormalized = "Χ";
+    secondsCounterNormalized = 'Χ'
   } else {
-    secondsCounterNormalized = secondsCounter.toString();
+    secondsCounterNormalized = secondsCounter.toString()
   }
-
   if (tinyCounter === 11) {
-    tinyCounterNormalized = "Ɛ";
+    tinyCounterNormalized = 'Ɛ'
   } else if (tinyCounter === 10) {
-    tinyCounterNormalized = "Χ";
+    tinyCounterNormalized = 'Χ'
   } else {
-    tinyCounterNormalized = tinyCounter.toString();
+    tinyCounterNormalized = tinyCounter.toString()
   }
-
   // Define variable for final dozenal time
   const dozenalTime =
     twoHourCounterNormalized +
     tenMinuteCounterNormalized +
     fiftySecondCounterNormalized +
-    "." +
+    '.' +
     secondsCounterNormalized +
-    tinyCounterNormalized;
-
+    tinyCounterNormalized
   // Set dozenal time label
-  document.getElementById("dozenalTime").innerHTML = dozenalTime;
-
+  dozenalTimeSpan.innerText = dozenalTime
   // Calculate percentages for progress bars
-  const percentOfDay = (timeInSeconds / 86400) * 100;
-  const percentOfTwoHours = ((timeInSeconds % 7200) / 7200) * 100;
-  const percentOfTenMinutes = ((timeInSeconds % 600) / 600) * 100;
-  const percentOfFiftySeconds = ((timeInSeconds % 50) / 50) * 100;
-
+  const percentOfDay = (timeInSeconds / 86400) * 100
+  const percentOfTwoHours = ((timeInSeconds % 7200) / 7200) * 100
+  const percentOfTenMinutes = ((timeInSeconds % 600) / 600) * 100
+  const percentOfFiftySeconds = ((timeInSeconds % 50) / 50) * 100
   // Set CSS variables with calculated percentages
   document.documentElement.style.setProperty(
-    "--day-bar-fill",
-    percentOfDay + "%"
-  );
+    '--day-bar-fill',
+    `${percentOfDay}%`
+  )
   document.documentElement.style.setProperty(
-    "--two-hour-bar-fill",
-    percentOfTwoHours + "%"
-  );
+    '--two-hour-bar-fill',
+    `${percentOfTwoHours}%`
+  )
   document.documentElement.style.setProperty(
-    "--ten-minute-bar-fill",
-    percentOfTenMinutes + "%"
-  );
+    '--ten-minute-bar-fill',
+    `${percentOfTenMinutes}%`
+  )
   document.documentElement.style.setProperty(
-    "--fifty-second-bar-fill",
-    percentOfFiftySeconds + "%"
-  );
-
+    '--fifty-second-bar-fill',
+    `${percentOfFiftySeconds}%`
+  )
   // Add labels to progress bars
-  document.getElementById("dayBar").innerHTML = twoHourCounterNormalized;
-  document.getElementById("twoHourBar").innerHTML = tenMinuteCounterNormalized;
-  document.getElementById(
-    "tenMinuteBar"
-  ).innerHTML = fiftySecondCounterNormalized;
-  document.getElementById(
-    "fiftySecondBar"
-  ).innerHTML = secondsCounterNormalized;
-
+  dayBarDiv.innerText = twoHourCounterNormalized
+  twoHourBarDiv.innerText = tenMinuteCounterNormalized
+  tenMinuteBarDiv.innerText = fiftySecondCounterNormalized
+  fiftySecondBarDiv.innerText = secondsCounterNormalized
   // Initialize variables for phase start and end values
-  let phaseStart = "";
-  let phaseEnd = "";
-
+  let phaseStart = ''
+  let phaseEnd = ''
   // Determine current phase
   if (twoHourCounter === 11) {
-    phaseStart = "Night";
-    phaseEnd = "Midnight";
+    phaseStart = 'Night'
+    phaseEnd = 'Midnight'
   } else if (twoHourCounter === 10) {
-    phaseStart = "Twilight";
-    phaseEnd = "Night";
+    phaseStart = 'Twilight'
+    phaseEnd = 'Night'
   } else if (twoHourCounter === 9) {
-    phaseStart = "Evening";
-    phaseEnd = "Twilight";
+    phaseStart = 'Evening'
+    phaseEnd = 'Twilight'
   } else if (twoHourCounter === 8) {
-    phaseStart = "Late afternoon";
-    phaseEnd = "Evening";
+    phaseStart = 'Late afternoon'
+    phaseEnd = 'Evening'
   } else if (twoHourCounter === 7) {
-    phaseStart = "Midafternoon";
-    phaseEnd = "Late afternoon";
+    phaseStart = 'Midafternoon'
+    phaseEnd = 'Late afternoon'
   } else if (twoHourCounter === 6) {
-    phaseStart = "Noon";
-    phaseEnd = "Midafternoon";
+    phaseStart = 'Noon'
+    phaseEnd = 'Midafternoon'
   } else if (twoHourCounter === 5) {
-    phaseStart = "Late morning";
-    phaseEnd = "Noon";
+    phaseStart = 'Late morning'
+    phaseEnd = 'Noon'
   } else if (twoHourCounter === 4) {
-    phaseStart = "Midmorning";
-    phaseEnd = "Late morning";
+    phaseStart = 'Midmorning'
+    phaseEnd = 'Late morning'
   } else if (twoHourCounter === 3) {
-    phaseStart = "Early morning";
-    phaseEnd = "Midmorning";
+    phaseStart = 'Early morning'
+    phaseEnd = 'Midmorning'
   } else if (twoHourCounter === 2) {
-    phaseStart = "Predawn";
-    phaseEnd = "Early morning";
+    phaseStart = 'Predawn'
+    phaseEnd = 'Early morning'
   } else if (twoHourCounter === 1) {
-    phaseStart = "Witching";
-    phaseEnd = "Predawn";
+    phaseStart = 'Witching'
+    phaseEnd = 'Predawn'
   } else {
-    phaseStart = "Midnight";
-    phaseEnd = "Witching";
+    phaseStart = 'Midnight'
+    phaseEnd = 'Witching'
   }
-
   // Set phase start and end labels
-  document.getElementById("phaseStart").innerHTML = phaseStart;
-  document.getElementById("phaseEnd").innerHTML = phaseEnd;
+  phaseStartSpan.innerText = phaseStart
+  phaseEndSpan.innerText = phaseEnd
 }
+// Run function on page load
+dozenal()
+// Rerun function at intervals
+setInterval(dozenal, 347)

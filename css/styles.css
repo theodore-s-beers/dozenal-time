@@ -1,0 +1,58 @@
+:root {
+  --day-bar-fill: 0;
+  --fifty-second-bar-fill: 0;
+  --ten-minute-bar-fill: 0;
+  --two-hour-bar-fill: 0;
+}
+
+code {
+  font-size: large;
+}
+
+.bar-label {
+  margin-top: 1rem;
+}
+
+.container {
+  margin-top: 0.5rem;
+  max-width: 600px;
+}
+
+.negative-top-margin {
+  margin-top: -0.4rem;
+}
+
+.progress {
+  height: 2rem;
+}
+
+#dayBar {
+  width: var(--day-bar-fill);
+}
+
+#day-phase-label {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+#fiftySecondBar {
+  width: var(--fifty-second-bar-fill);
+}
+
+#final-bar {
+  margin-bottom: 1.3rem;
+}
+
+#full-day-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+#tenMinuteBar {
+  width: var(--ten-minute-bar-fill);
+}
+
+#twoHourBar {
+  width: var(--two-hour-bar-fill);
+}

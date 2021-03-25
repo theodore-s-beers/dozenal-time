@@ -10,54 +10,27 @@
 
     <meta
       name="description"
-      content="Track the progression of the day in dozenal time."
+      content="Track the progression of the day in dozenal time"
     />
 
     <link rel="icon" href="#" />
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-    <style>
-      :root {
-        --day-bar-fill: 0;
-        --two-hour-bar-fill: 0;
-        --ten-minute-bar-fill: 0;
-        --fifty-second-bar-fill: 0;
-      }
-
-      .progress {
-        height: 2rem;
-      }
-
-      #dayBar {
-        width: var(--day-bar-fill);
-      }
-
-      #twoHourBar {
-        width: var(--two-hour-bar-fill);
-      }
-
-      #tenMinuteBar {
-        width: var(--ten-minute-bar-fill);
-      }
-
-      #fiftySecondBar {
-        width: var(--fifty-second-bar-fill);
-      }
-    </style>
+    <link rel="stylesheet" href="css/styles.css" />
 
     <title>Dozenal time intuition</title>
   </head>
   <body>
-    <div class="container" style="max-width: 600px; margin-top: 0.5rem;">
+    <div class="container">
       <h2>Dozenal time intuition</h2>
 
       <p>
         The current dozenal time is
-        <code style="font-size: large;"><span id="dozenalTime"></span></code>.
+        <code><span id="dozenalTime"></span></code>.
       </p>
 
-      <p style="margin-top: -0.4rem;">
+      <p class="negative-top-margin">
         For a general introduction to the topic, see
         <a href="https://dozenal.ae-web.ca/" target="_blank" rel="noopener"
           >Paul Rapoport’s website</a
@@ -68,7 +41,7 @@
 
       <hr />
 
-      <div style="display: flex; justify-content: space-between;">
+      <div id="full-day-label">
         <span>Midnight</span><span>Noon</span><span>Midnight</span>
       </div>
 
@@ -82,9 +55,7 @@
         ></div>
       </div>
 
-      <div
-        style="display: flex; justify-content: space-between; margin-top: 1rem;"
-      >
+      <div id="day-phase-label">
         <span id="phaseStart"></span><span id="phaseEnd"></span>
       </div>
 
@@ -98,7 +69,7 @@
         ></div>
       </div>
 
-      <div style="margin-top: 1rem;">
+      <div class="bar-label">
         <span>Coffee break (12/ phase of day)</span>
       </div>
 
@@ -112,11 +83,11 @@
         ></div>
       </div>
 
-      <div style="margin-top: 1rem;">
+      <div class="bar-label">
         <span>Dozenal minute (12/ coffee break)</span>
       </div>
 
-      <div class="progress" style="margin-bottom: 1.3rem;">
+      <div class="progress" id="final-bar">
         <div
           id="fiftySecondBar"
           class="progress-bar bg-info"
@@ -128,7 +99,7 @@
 
       <hr />
 
-      <p style="margin-top: -0.4rem;">
+      <p class="negative-top-margin">
         Made under lockdown by
         <a href="https://www.theobeers.com/" rel="noopener">Theo Beers</a
         ><br /><em>Last updated 25 Apr. 2020</em>
@@ -139,12 +110,5 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dozenal.js"></script>
-    <script>
-      // Run function on page load
-      dozenal();
-
-      // Rerun function at intervals
-      setInterval(dozenal, 347);
-    </script>
   </body>
 </html>

@@ -13,6 +13,7 @@ const fiftySecondBarDiv = document.getElementById(
 const phaseStartSpan = document.getElementById('phaseStart') as HTMLSpanElement
 const phaseEndSpan = document.getElementById('phaseEnd') as HTMLSpanElement
 
+// Main function
 function dozenal (): void {
   // Get current date and time
   const currentDate = new Date()
@@ -44,7 +45,7 @@ function dozenal (): void {
   } else if (twoHourCounter === 10) {
     twoHourCounterNormalized = 'Χ'
   } else {
-    twoHourCounterNormalized = twoHourCounter.toString()
+    twoHourCounterNormalized = String(twoHourCounter)
   }
 
   if (tenMinuteCounter === 11) {
@@ -52,7 +53,7 @@ function dozenal (): void {
   } else if (tenMinuteCounter === 10) {
     tenMinuteCounterNormalized = 'Χ'
   } else {
-    tenMinuteCounterNormalized = tenMinuteCounter.toString()
+    tenMinuteCounterNormalized = String(tenMinuteCounter)
   }
 
   if (fiftySecondCounter === 11) {
@@ -60,7 +61,7 @@ function dozenal (): void {
   } else if (fiftySecondCounter === 10) {
     fiftySecondCounterNormalized = 'Χ'
   } else {
-    fiftySecondCounterNormalized = fiftySecondCounter.toString()
+    fiftySecondCounterNormalized = String(fiftySecondCounter)
   }
 
   if (secondsCounter === 11) {
@@ -68,7 +69,7 @@ function dozenal (): void {
   } else if (secondsCounter === 10) {
     secondsCounterNormalized = 'Χ'
   } else {
-    secondsCounterNormalized = secondsCounter.toString()
+    secondsCounterNormalized = String(secondsCounter)
   }
 
   if (tinyCounter === 11) {
@@ -76,7 +77,7 @@ function dozenal (): void {
   } else if (tinyCounter === 10) {
     tinyCounterNormalized = 'Χ'
   } else {
-    tinyCounterNormalized = tinyCounter.toString()
+    tinyCounterNormalized = String(tinyCounter)
   }
 
   // Define variable for final dozenal time
@@ -120,6 +121,15 @@ function dozenal (): void {
   twoHourBarDiv.innerText = tenMinuteCounterNormalized
   tenMinuteBarDiv.innerText = fiftySecondCounterNormalized
   fiftySecondBarDiv.innerText = secondsCounterNormalized
+
+  // Set aria-valuenow attributes
+  dayBarDiv.setAttribute('aria-valuenow', String(percentOfDay))
+  twoHourBarDiv.setAttribute('aria-valuenow', String(percentOfTwoHours))
+  tenMinuteBarDiv.setAttribute('aria-valuenow', String(percentOfTenMinutes))
+  fiftySecondBarDiv.setAttribute(
+    'aria-valuenow',
+    String(percentOfFiftySeconds)
+  )
 
   // Initialize variables for phase start and end values
   let phaseStart = ''

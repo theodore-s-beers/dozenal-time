@@ -6,7 +6,7 @@ sort-package-json &&
 	npm install &&
 	rm js/dozenal.js &&
 	npm run standardize &&
+	npm run check &&
 	npm run compile &&
-	mv ts/dozenal.js js/dozenal.js &&
 	npm run prettify &&
 	npm run standardize

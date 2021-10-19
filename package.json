@@ -14,15 +14,18 @@
   "author": "Theo Beers",
   "main": "index.html",
   "scripts": {
-    "compile": "tsc -t 'ESNext' ts/dozenal.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "standardize": "ts-standard --fix",
-    "prettify": "prettier --write --plugin-search-dir=. ."
+    "check": "tsc --noEmit --skipLibCheck ts/dozenal.ts",
+    "compile": "esbuild ts/dozenal.ts --outfile=js/dozenal.js",
+    "prettify": "prettier --write --plugin-search-dir=. .",
+    "standardize": "eslint --fix --ignore-path .prettierignore .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "esbuild": "^0.13.8",
+    "eslint": "^8.0.1",
     "prettier": "^2.4.1",
-    "ts-standard": "^10.0.0",
     "typescript": "^4.4.4"
   }
 }

@@ -126,10 +126,7 @@ function dozenal (): void {
   dayBarDiv.setAttribute('aria-valuenow', String(percentOfDay))
   twoHourBarDiv.setAttribute('aria-valuenow', String(percentOfTwoHours))
   tenMinuteBarDiv.setAttribute('aria-valuenow', String(percentOfTenMinutes))
-  fiftySecondBarDiv.setAttribute(
-    'aria-valuenow',
-    String(percentOfFiftySeconds)
-  )
+  fiftySecondBarDiv.setAttribute('aria-valuenow', String(percentOfFiftySeconds))
 
   // Initialize variables for phase start and end values
   let phaseStart = ''

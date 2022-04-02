@@ -14,10 +14,10 @@
   "author": "Theo Beers",
   "main": "index.html",
   "scripts": {
-    "check": "tsc --noEmit --skipLibCheck ts/dozenal.ts",
-    "compile": "esbuild ts/dozenal.ts --outfile=js/dozenal.js",
-    "prettify": "prettier --write .",
-    "standardize": "eslint --fix --ignore-path .prettierignore .",
+    "check": "tsc",
+    "compile": "esbuild ts/dozenal.ts --minify --outfile=js/dozenal.min.js",
+    "format": "prettier --write .",
+    "lint": "eslint --fix --ignore-path .prettierignore .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

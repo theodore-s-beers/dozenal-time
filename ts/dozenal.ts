@@ -32,12 +32,12 @@ function dozenal (): void {
   const secondsCounter = Math.floor((timeInSeconds % 50) / (50 / 12))
   const tinyCounter = Math.floor((timeInSeconds % (50 / 12)) / (50 / 12 / 12))
 
-  // Initialize variables for base-12 values
-  let twoHourCounterNormalized = ''
-  let tenMinuteCounterNormalized = ''
-  let fiftySecondCounterNormalized = ''
-  let secondsCounterNormalized = ''
-  let tinyCounterNormalized = ''
+  // Declare variables for base-12 values
+  let twoHourCounterNormalized
+  let tenMinuteCounterNormalized
+  let fiftySecondCounterNormalized
+  let secondsCounterNormalized
+  let tinyCounterNormalized
 
   // Set base-12 values
   if (twoHourCounter === 11) {
@@ -128,9 +128,9 @@ function dozenal (): void {
   tenMinuteBarDiv.setAttribute('aria-valuenow', String(percentOfTenMinutes))
   fiftySecondBarDiv.setAttribute('aria-valuenow', String(percentOfFiftySeconds))
 
-  // Initialize variables for phase start and end values
-  let phaseStart = ''
-  let phaseEnd = ''
+  // Declare variables for phase start and end values
+  let phaseStart
+  let phaseEnd
 
   // Determine current phase
   if (twoHourCounter === 11) {

@@ -120,7 +120,7 @@ function dozenal(): void {
   dayBarDiv.innerText = twoHourCounterNormalized;
   twoHourBarDiv.innerText = tenMinuteCounterNormalized;
   tenMinuteBarDiv.innerText = fiftySecondCounterNormalized;
-  fiftySecondBarDiv.innerText = secondsCounterNormalized;
+  fiftySecondBarDiv.innerText = `.${secondsCounterNormalized}`;
 
   // Set aria-valuenow attributes
   dayBarDiv.setAttribute("aria-valuenow", String(percentOfDay));

@@ -9,6 +9,10 @@ code {
   font-size: 120%;
 }
 
+.allow-hyphens {
+  hyphens: auto;
+}
+
 .bar-label {
   margin-top: 1rem;
 }

@@ -22,12 +22,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "esbuild": "^0.25.0",
-    "eslint": "^9.21.0",
-    "prettier": "^3.5.2",
-    "typescript": "5.7.3",
-    "typescript-eslint": "^8.25.0"
+    "@eslint/js": "^9.32.0",
+    "esbuild": "^0.25.8",
+    "eslint": "^9.32.0",
+    "prettier": "^3.6.2",
+    "typescript": "5.9.2",
+    "typescript-eslint": "^8.39.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

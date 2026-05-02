@@ -1,15 +1,9 @@
 // Global DOM variables
-const dozenalTimeSpan = document.getElementById(
-  "dozenalTime",
-) as HTMLSpanElement;
+const dozenalTimeSpan = document.getElementById("dozenalTime") as HTMLSpanElement;
 const dayBarDiv = document.getElementById("dayBar") as HTMLDivElement;
 const twoHourBarDiv = document.getElementById("twoHourBar") as HTMLDivElement;
-const tenMinuteBarDiv = document.getElementById(
-  "tenMinuteBar",
-) as HTMLDivElement;
-const fiftySecondBarDiv = document.getElementById(
-  "fiftySecondBar",
-) as HTMLDivElement;
+const tenMinuteBarDiv = document.getElementById("tenMinuteBar") as HTMLDivElement;
+const fiftySecondBarDiv = document.getElementById("fiftySecondBar") as HTMLDivElement;
 const phaseStartSpan = document.getElementById("phaseStart") as HTMLSpanElement;
 const phaseEndSpan = document.getElementById("phaseEnd") as HTMLSpanElement;
 
@@ -99,18 +93,9 @@ function dozenal(): void {
   const percentOfFiftySeconds = ((timeInSeconds % 50) / 50) * 100;
 
   // Set CSS variables with calculated percentages
-  document.documentElement.style.setProperty(
-    "--day-bar-fill",
-    `${percentOfDay}%`,
-  );
-  document.documentElement.style.setProperty(
-    "--two-hour-bar-fill",
-    `${percentOfTwoHours}%`,
-  );
-  document.documentElement.style.setProperty(
-    "--ten-minute-bar-fill",
-    `${percentOfTenMinutes}%`,
-  );
+  document.documentElement.style.setProperty("--day-bar-fill", `${percentOfDay}%`);
+  document.documentElement.style.setProperty("--two-hour-bar-fill", `${percentOfTwoHours}%`);
+  document.documentElement.style.setProperty("--ten-minute-bar-fill", `${percentOfTenMinutes}%`);
   document.documentElement.style.setProperty(
     "--fifty-second-bar-fill",
     `${percentOfFiftySeconds}%`,
@@ -126,10 +111,7 @@ function dozenal(): void {
   dayBarDiv.setAttribute("aria-valuenow", String(percentOfDay));
   twoHourBarDiv.setAttribute("aria-valuenow", String(percentOfTwoHours));
   tenMinuteBarDiv.setAttribute("aria-valuenow", String(percentOfTenMinutes));
-  fiftySecondBarDiv.setAttribute(
-    "aria-valuenow",
-    String(percentOfFiftySeconds),
-  );
+  fiftySecondBarDiv.setAttribute("aria-valuenow", String(percentOfFiftySeconds));
 
   // Declare variables for phase start and end values
   let phaseStart;

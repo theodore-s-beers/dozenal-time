@@ -4,7 +4,7 @@ set -Eeuo pipefail
 
 sort-package-json &&
 	pnpm i &&
-	dum format &&
-	dum lint &&
-	dum check &&
-	dum compile
+	pnpm run format &&
+	pnpm run lint &&
+	pnpm run check &&
+	pnpm run compile

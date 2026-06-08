@@ -5,7 +5,16 @@
   --two-hour-bar-fill: 0;
 }
 
+a {
+  color: #336699;
+}
+
+a:hover {
+  color: #1f66ad;
+}
+
 code {
+  color: #c65379;
   font-size: 120%;
 }
 
@@ -31,6 +40,7 @@ code {
 }
 
 #dayBar {
+  background-color: #336699;
   width: var(--day-bar-fill);
 }
 
@@ -41,6 +51,7 @@ code {
 }
 
 #fiftySecondBar {
+  background-color: #c66f39;
   width: var(--fifty-second-bar-fill);
 }
 
@@ -54,9 +65,11 @@ code {
 }
 
 #tenMinuteBar {
+  background-color: #267360;
   width: var(--ten-minute-bar-fill);
 }
 
 #twoHourBar {
+  background-color: #7e5095;
   width: var(--two-hour-bar-fill);
 }

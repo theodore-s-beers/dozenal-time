@@ -1,10 +1,10 @@
 #! /usr/bin/env bash
 
-set -Eeuo pipefail
+set -euo pipefail
 
-sort-package-json &&
-	pnpm i &&
-	pnpm run format &&
-	pnpm run lint &&
-	pnpm run check &&
-	pnpm run compile
+sort-package-json
+pnpm i
+pnpm run format
+pnpm run lint
+pnpm run check
+pnpm run compile

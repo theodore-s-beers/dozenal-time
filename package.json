@@ -24,7 +24,7 @@
   "devDependencies": {
     "esbuild": "^0.28.0",
     "oxfmt": "^0.53.0",
-    "oxlint": "^1.68.0",
+    "oxlint": "^1.72.0",
     "typescript": "6.0.3"
   }
 }
